@@ -16,7 +16,7 @@ joinSound:Play()
 
 -- Hiển thị thông báo khi bật script
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Tuấn Anh Roblox",
+    Title = "Tuấn Anh IOS",
     Text = "Tuấn Anh Dep Zai",  -- Tên chủ script
     Duration = 5
 })
@@ -24,7 +24,7 @@ game.StarterGui:SetCore("SendNotification", {
 task.spawn(function()
     while true do
         game.StarterGui:SetCore("SendNotification", {
-            Title = "Tuấn Anh Roblox",
+            Title = "Tuấn Anh IOS",
             Text = "Tuấn Anh DepZai Chest",  -- Tên chủ script
             Duration = 5
         })
@@ -34,11 +34,11 @@ end)
 
 task.spawn(function()
     require(ReplicatedStorage:WaitForChild("Notification")).new(
-        " <Color=Red>Tuấn Anh Roblox Chest <Color=/> "
+        " <Color=Red>Tuấn Anh Hub Chest <Color=/> "
     ):Display()
     
     require(ReplicatedStorage:WaitForChild("Notification")).new(
-        " <Color=Green>Welcome to Tuấn Anh Roblox Loading<Color=/> "
+        " <Color=Green>Welcome to Tuấn Anh IOS Hub Loading<Color=/> "
     ):Display()
     
     require(ReplicatedStorage:WaitForChild("Notification")).new(
@@ -50,7 +50,7 @@ end)
 local MaxSpeed = 370 -- Tốc độ bay
 local ChestDetectionDistance = 5000 -- Khoảng cách tối đa tìm rương
 local ChestLimit = 165  -- Số rương tối đa để đổi server
-local SpamChatDelay = 10 -- Delay giữa các lần chat
+local SpamChatDelay = 100 -- Delay giữa các lần chat
 
 -- Biến để đếm số lượng rương đã nhặt
 local chestsCollected = 0
@@ -246,7 +246,7 @@ end
 -- Chức năng spam chat
 task.spawn(function()
     while true do
-        game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents").SayMessageRequest:FireServer("Tuấn Anh Roblox", "All")
+        game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents").SayMessageRequest:FireServer("Tuấn Anh IOS Hub Auto Chest", "All")
         task.wait(SpamChatDelay)  -- Chờ trước khi spam chat tiếp
     end
 end)
