@@ -17,7 +17,7 @@ joinSound:Play()
 -- Hiển thị thông báo khi bật script
 game.StarterGui:SetCore("SendNotification", {
     Title = "Tuấn Anh IOS",
-    Text = "Tuấn Anh Dep Zai",  -- Tên chủ script
+    Text = "Tuấn Anh Điển Troai",  -- Tên chủ script
     Duration = 5
 })
 
@@ -28,7 +28,7 @@ task.spawn(function()
             Text = "Tuấn Anh DepZai Chest",  -- Tên chủ script
             Duration = 5
         })
-        task.wait(10)  -- Khoảng thời gian giữa các thông báo
+        task.wait(10000)  -- Khoảng thời gian giữa các thông báo
     end
 end)
 
@@ -42,7 +42,7 @@ task.spawn(function()
     ):Display()
     
     require(ReplicatedStorage:WaitForChild("Notification")).new(
-        " <Color=Yellow>https://www.facebook.com/tuanangg10<Color=/> "
+        " <Color=Yellow>https://Discord.gg/AkDgH65MUF<Color=/> "
     ):Display()
 end)
 
@@ -50,7 +50,7 @@ end)
 local MaxSpeed = 370 -- Tốc độ bay
 local ChestDetectionDistance = 5000 -- Khoảng cách tối đa tìm rương
 local ChestLimit = 165  -- Số rương tối đa để đổi server
-local SpamChatDelay = 100 -- Delay giữa các lần chat
+local SpamChatDelay = 300 -- Delay giữa các lần chat
 
 -- Biến để đếm số lượng rương đã nhặt
 local chestsCollected = 0
@@ -225,7 +225,7 @@ local function collectChests()
                 teleportToChest(chest)
                 chestsCollected = chestsCollected + 1  -- Tăng số lượng rương đã nhặt
                 print("Đã nhặt rương: " .. chestsCollected)
-                task.wait(0,4) -- Delay ngắn khi nhặt xong rương
+                task.wait(0,6) -- Delay ngắn khi nhặt xong rương
 
                 -- Nếu đã nhặt đủ 165 cái rương, tự động đổi server
                 if chestsCollected >= ChestLimit then
@@ -246,7 +246,7 @@ end
 -- Chức năng spam chat
 task.spawn(function()
     while true do
-        game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents").SayMessageRequest:FireServer("Tuấn Anh IOS Hub Auto Chest", "All")
+        game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents").SayMessageRequest:FireServer("Tuấn Anh IOS Quá Đẹp Zai EZ", "All")
         task.wait(SpamChatDelay)  -- Chờ trước khi spam chat tiếp
     end
 end)
